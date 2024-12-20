@@ -15,11 +15,11 @@ app.npass["test"] = function(name) {
     const ctx = canvas.getContext('2d');
     canvas.width = defaultTemplateSize[0];
     canvas.height = defaultTemplateSize[1];
+    
     const template = new Image(defaultTemplateSize[0], defaultTemplateSize[1])
     template.src = "templates/test1.png";
     template.onload = function() {
-        ctx.drawImage(template, defaultTemplateSize[0], defaultTemplateSize[1]);
-        window.open(canvas.toDataURL("image/png"))
+        app.export(canvas);
     }
     }
 
